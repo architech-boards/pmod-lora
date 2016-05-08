@@ -14,7 +14,7 @@ Microchip’s Long Range Low Power End Node solution
 
 .. image:: _static/logo_silica_microchip.jpg
 
-.. image:: _static/board_on.jpg
+.. image:: _static/pmod_lora.jpg
 
 *PMOD-Lora*
 

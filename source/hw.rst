@@ -9,7 +9,7 @@ The board is provided with:
 
 - NXP FRDM-KL26Z Board
 - Microchip RN2483 Module
-- RSR*** board
+- RSR1066 board
 
 The Microchip RN2483 module provides LoRaWAN™ protocol connectivity using a simple UART interface. The NXP **MKLS26Z** is connected to the Microchip module using the configuration 57600 8N1 without using RTS, CTS lines.
 

@@ -44,17 +44,18 @@ After the registration, you can close the window device manager and on the main 
 
 .. image:: _static/actility_logger.jpg
 
-Here you will see all the messages sent by your device. Now take the FRDM-KL26Z board and connect it to the RSR*** board. It is required mouont the strip connectors:
+Here you will see all the messages sent by your device. Now take the FRDM-KL26Z board and connect it to the RSR1066 board. It is required mount the strip connectors:
 
-.. image:: _static/da fare.jpg
+.. image:: _static/strips.jpg
+.. image:: _static/rsr1066.jpg
 
-Connect the PMOD module to the CN***
+Connect the PMOD module to the CN7
 
-.. image:: _static/da fare.jpg
+.. image:: _static/pmod_plugin.jpg
 
 Then power supply the FRDM board via mini USB connection.
 
-.. image:: _static/da fare.jpg
+.. image:: _static/power_on.jpg
 
 The board will send messages every 30 seconds. Now it's time to see the data sent. Power off the board. And in the logger window, you will have 2 rows, every row is a message received from the server.
 If you click on the **+** node you can see the unencrypted data received **Payload (hex):**. All messages start with the number 18, the other three number couples are the data read from the accelerometer mounted on the board. You will see the data changed when you have tilted the board and sent the second message.

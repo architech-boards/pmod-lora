@@ -16,7 +16,7 @@ Hardware required:
 
 - PMOD-Lora
 
-- RSR*** board
+- RSR1066 board
 
 - FRDM-KL26Z board by Freescale
 
