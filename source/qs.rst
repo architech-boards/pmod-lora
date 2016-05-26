@@ -5,7 +5,7 @@
 Quick start guide
 -----------------
 
-In order to see working the PMOD-Lora you have to register the device on the `activity website <http://actility.thingpark.com/portal/web>`_ clicking on **Create an account**.
+In order to see working the PMOD-Lora you have to register the device on the `activity website <http://actility.thingpark.com/portal/web>`_ using your personal account.
 After the registration login and you will access the main page.
 
 .. image:: _static/actility_main.jpg
@@ -27,7 +27,7 @@ In this form you have to insert the data we have stored in the RN2483. The follo
 - **Network address**: last 4 less significant bytes from the Device EUI key, for example if the code is **0004A30B001B9954** then the network address will be **001B9954**
 - **Device profile**: **LoRaWAN 1.0 class A**
 - **Network key (hexa)**: we have already saved it in the RN2834 device, it is the **Device EUI** key copied *twice*, for example if the device EUI is **0004A30B001B9954** then the **network key** you have to insert will be **0004A30B001B99540004A30B001B9954**.
-- **Application keys**: Insert **AFBECD56473829100192837465FAEBDC**, port **4**. We have saved it in the RN2834 device.
+- **Application keys**: Insert **AFBECD56473829100192837465FAEBDC**, port **4**. We have saved it in the RN2834 device. Press "Update" button to confirm.
 - **Connectivity plan**: choose yours
 
 Optional field but useful:

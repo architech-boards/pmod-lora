@@ -31,62 +31,81 @@ Special Editions are fully functional free download versions of the CodeWarrior 
 
 Download the IDE from `this page <http://www.freescale.com/tools/software-and-tools/software-development-tools/codewarrior-development-tools/downloads/special-edition-software:CW_SPECIALEDITIONS>`_, we used Codewarriror for Microcontrollers **v10.6.4**.
 
-Next, launch the downloaded file **CW_MCU_v10.6.4_Special_Edition.exe** following all the default options. Once it is installed will be created its icon on the desktop.
+Next, launch the downloaded file **CW_MCU_v10.6.4_Special_Edition.exe** following all the default options and selecting **Kinetis** as platform. Once it is installed will be created its icon on the desktop.
 
 .. image:: _static/codewarrior_icon.jpg
+
+Prepare the Hardware
+********************
+
+Here you will see all the messages sent by your device. Now take the FRDM-KL26Z board and connect it to the RSR1066 board. It is required mount the strip connectors:
+
+.. image:: _static/strips.jpg
+.. image:: _static/rsr1066.jpg
+
+Connect the PMOD module to the CN7 then power supply the FRDM board via mini USB connection.
+
+.. image:: _static/power_on.jpg
 
 Configure the FRDM-KL26Z with OpenSDA interface
 ***********************************************
 
 1. In order to install the lastest firmware go to the webpage `OpenSDA Support <http://www.pemicro.com/opensda/>`_. 
 
-2. Download and install **Windows USB Drivers Download PEDrivers_install.exe** from `here <http://www.pemicro.com/downloads/download_file.cfm?download_id=301>`_. It is required to register in the website.
+2. Download and install **Windows USB Drivers Download PEDrivers_install.exe** from `pemicro website <http://www.pemicro.com/downloads/download_file.cfm?download_id=301>`_. It is required to register in the website.
 
 3. Then download the lastest `Firmware Apps (.zip file) <http://www.pemicro.com/downloads/download_file.cfm?download_id=378>`_.
 
-4. Finally connect the FRDM-KL26Z board to the PC via mini-USB connector **OpenSDA**, placing the board in Bootloader mode (hold the Reset button down while connecting to USB, then release it). Your board will then be visible as a drive labelled **BOOTLOADER**. From the **Firmware Apps** zip copy into the BOOTLOADER disk the file **DEBUG_OpenSDA_for_MBED_Bootloader_by_Pemicro_v1XX.bin** (where XX is the lastest version). Now unplag the USB cable.
+4. Finally connect the FRDM-KL26Z board to the PC via mini-USB connector **OpenSDA**, remove the 1066 board and set the board in Bootloader mode (hold the Reset button down while connecting to USB, then release it). Your board will then be visible as a drive labelled **BOOTLOADER**. From the **Firmware Apps** zip copy into the BOOTLOADER disk the file **DEBUG_OpenSDA_for_MBED_Bootloader_by_Pemicro_v1XX.bin** (where XX is the lastest version). Now unplag the USB cable.
 
 Import Project
 **************
 
-1. Launch Codewarrior and select a folder for the workspace. Our project will be imported in this directory. In this guide we used this path:
+1. Create a folder named "workspace"
+
+2. Take the zip project file and unzip it into the folder.
+
+3. Launch Codewarrior and select a folder for the workspace. Our project will be imported in this directory. In this guide we used this path:
 
 .. image:: _static/codewarrior_workspace.jpg
 
-2. Go to **File -> New** and select **Project...**.
+4. Go to **File -> Import...**
 
-3. Select **General -> Project** and click on **Next >** button.
+5. Select **General -> Existing Projects into Workspace** and click on **Next >** button.
 
-.. image:: _static/codewarrior_new_project.jpg
+.. image:: _static/codewarrior_import_project.jpg
 
-4. Create the project assigning the name **PMODLora** and clicking on **Finish** button.
+6. Select the folder where is locate the project **lib_lora** and select **FRDM-KL26Z-UART**. Then click on **Finish**.
 
-.. image:: _static/codewarrior_create_new_project.jpg
-
-5. Press the right button mouse on PMODLora project icon and select **Import...**
-
-.. image:: _static/codewarrior_pmdlora_project_icon_import.jpg
-
-6. Select **General -> Archive File** and click on **Next >** button.
-
-.. image:: _static/codewarrior_select_archive_file.jpg
-
-7. Select the archive file browsing to the zip file **lib_lora** and select into the folder **PMODLora**. Then click on **Finish**.
-
-.. image:: _static/codewarrior_import_lora_archive.jpg
+.. image:: _static/codewarrior_import_lora_project.jpg
 
 Build & Debug
 *************
 
-8. Now you have to open **Process Expert Window** double clicking on **ProcessorExpert.pe**
+If you want download the firmware in the board without debugging it go to step 11.
+In order to debug the code you have to change the UART port because **PTA1** and **PTA2** are used for debug purpose from the OpenSDA.
+
+1. Now you have to open **Process Expert Window** double clicking on **ProcessorExpert.pe**
 
 .. image:: _static/codewarrior_processor_expert_icon_lora.jpg
 
-9. Now it's time to compile the sources code, go to **Project -> Build All**
+2. In **Components - FRDM-KL26Z-UART** tab select **AS2:Serial_LDD** node
 
-10. Once compiling is finished connect the mini usb from the PC to the FRDM board. Then go to **Run -> Debug configurations...**
+.. image:: _static/codewarrior_as2serial_ldd.jpg
 
-11. Finally select FRDM-KL26Z-UART_FLASH_OpenSDA and choose the type of connection than click on the **Debug** button.
+3. In **Component Inspector - A2** select RxD **PTD6** and TxD **PTD7**
+
+.. image:: _static/codewarrior_ptd6_ptd7.jpg
+
+4. In order to debug you have to connect **PTD6** with **CN7 pin3** and **PTD7** with **CN7 pin2** as in figure. These pin must be disconnected from the board **1066**.
+
+.. image:: _static/codewarrior_debug_connection.jpg
+
+5. Now it's time to compile the sources code, go to **Project -> Build All**
+
+6. Once compiling is finished connect the mini usb from the PC to the FRDM board. Then go to **Run -> Debug configurations...**
+
+7. Finally select FRDM-KL26Z-UART_FLASH_OpenSDA and choose the type of connection than click on the **Debug** button.
 
 .. image:: _static/codewarrior_debug_configuration.jpg
 
