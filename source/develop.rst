@@ -82,7 +82,7 @@ Import Project
 Build & Debug
 *************
 
-If you want download the firmware in the board without debugging it go to step 11.
+If you want download the firmware in the board without debugging it go to step 5.
 In order to debug the code you have to change the UART port because **PTA1** and **PTA2** are used for debug purpose from the OpenSDA.
 
 1. Now you have to open **Process Expert Window** double clicking on **ProcessorExpert.pe**
@@ -105,7 +105,7 @@ In order to debug the code you have to change the UART port because **PTA1** and
 
 6. Once compiling is finished connect the mini usb from the PC to the FRDM board. Then go to **Run -> Debug configurations...**
 
-7. Finally select FRDM-KL26Z-UART_FLASH_OpenSDA and choose the type of connection than click on the **Debug** button.
+7. Finally select FRDM-KL26Z-UART_FLASH_OpenSDA and choose the type of connection **OpenSDA** than click on the **Debug** button.
 
 .. image:: _static/codewarrior_debug_configuration.jpg
 
