@@ -56,14 +56,14 @@ Configure the FRDM-KL26Z with OpenSDA interface
 
 3. Then download the lastest `Firmware Apps (.zip file) <http://www.pemicro.com/downloads/download_file.cfm?download_id=378>`_.
 
-4. Finally connect the FRDM-KL26Z board to the PC via mini-USB connector **OpenSDA**, remove the 1066 board and set the board in Bootloader mode (hold the Reset button down while connecting to USB, then release it). Your board will then be visible as a drive labelled **BOOTLOADER**. From the **Firmware Apps** zip copy into the BOOTLOADER disk the file **DEBUG_OpenSDA_for_MBED_Bootloader_by_Pemicro_v1XX.bin** (where XX is the lastest version). Now unplag the USB cable.
+4. Finally connect the FRDM-KL26Z board to the PC via mini-USB connector **OpenSDA**, remove the 1066 board and set the board in Bootloader mode (hold the Reset button down while connecting to USB, then release it). Your board will then be visible as a drive labelled **BOOTLOADER**. From the **Firmware Apps** zip copy into the BOOTLOADER disk the file **MSD-DEBUG-FRDM-KL26Z_Pemicro_vXXX.SDA** (where XX is the lastest version). Now unplag the USB cable.
 
 Import Project
 **************
 
 1. Create a folder named "workspace"
 
-2. Take the zip project file and unzip it into the folder.
+2. Download the project file form `architechboards website <http://downloads.architechboards.com/doc/PmodLora/lib_lora_release.zip>`_ and unzip it into the new folder.
 
 3. Launch Codewarrior and select a folder for the workspace. Our project will be imported in this directory. In this guide we used this path:
 
